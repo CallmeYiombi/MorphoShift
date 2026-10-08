@@ -1,0 +1,27 @@
+[1/5] Load frozen paired Entrez universe
+[2/5] Load canonical biological groups
+[3/5] Generate paired-gene splits
+  random_gene: eligible genes=5323
+  homology30: eligible genes=5323
+  homology50: eligible genes=5323
+  panther_family: eligible genes=5303
+[4/5] Validate all split artifacts
+[5/5] Write protocol manifest
+
+=== PAIRED SPLIT AUDIT ===
+     benchmark  seed  n_genes  n_train  n_val  n_test  frac_train  frac_val  frac_test                                                     split_sha256  n_groups  group_leakage_count                                                        path
+   random_gene    42     5323     4259    532     532    0.800113  0.099944   0.099944 1140ee7a167dc050e83a1da2a6ecaaa31c6039de5e006eba0037b902552e1004      5323                    0      processed/splits/crossmodal_v5/random_gene/seed_42.csv
+   random_gene   123     5323     4259    532     532    0.800113  0.099944   0.099944 b517377303948a192ee719cf656915985ee1e4a156816772f7ebbef38b6cce37      5323                    0     processed/splits/crossmodal_v5/random_gene/seed_123.csv
+   random_gene  2024     5323     4259    532     532    0.800113  0.099944   0.099944 fdf9af029d0bb2bd5eeaf4a56b171245c93a424e3a9707e513bcdf6f036b58ee      5323                    0    processed/splits/crossmodal_v5/random_gene/seed_2024.csv
+    homology30    42     5323     4259    532     532    0.800113  0.099944   0.099944 cb065cc1ab5b7baf05a0c884ae0b58df8027cad3aea1db3344e269e792eef6b1      3786                    0       processed/splits/crossmodal_v5/homology30/seed_42.csv
+    homology30   123     5323     4259    532     532    0.800113  0.099944   0.099944 d9be4d9a7a41475b64e1c8a61748f762330cb1072d8827990ae34a98d52690d9      3786                    0      processed/splits/crossmodal_v5/homology30/seed_123.csv
+    homology30  2024     5323     4259    532     532    0.800113  0.099944   0.099944 12be17aaf6394237edb064b8f598eabb780fc092425a365af2cb7e87c7c50923      3786                    0     processed/splits/crossmodal_v5/homology30/seed_2024.csv
+    homology50    42     5323     4259    532     532    0.800113  0.099944   0.099944 ed123fddaf63fc89faf87e9f06e5937456c87936e10088b8a1477b39f9cd7854      4479                    0       processed/splits/crossmodal_v5/homology50/seed_42.csv
+    homology50   123     5323     4259    532     532    0.800113  0.099944   0.099944 04c35d19bf44ea017f845674d786820371690a1d49fadd6756d92359e5935cab      4479                    0      processed/splits/crossmodal_v5/homology50/seed_123.csv
+    homology50  2024     5323     4259    532     532    0.800113  0.099944   0.099944 c275174486268c588ac5878477b6fd3aa5561eafecc88b3a3b528e7db7521aaf      4479                    0     processed/splits/crossmodal_v5/homology50/seed_2024.csv
+panther_family    42     5303     4243    530     530    0.800113  0.099943   0.099943 12e702c574e4f9259654f8600e472d0350642ac19d3e8a0face78b2785bc0c63      2498                    0   processed/splits/crossmodal_v5/panther_family/seed_42.csv
+panther_family   123     5303     4243    530     530    0.800113  0.099943   0.099943 787451342d84ee7ea181bb65dacf4a172dbff4e1aa101955f52451e1b4d8bce0      2498                    0  processed/splits/crossmodal_v5/panther_family/seed_123.csv
+panther_family  2024     5303     4243    530     530    0.800113  0.099943   0.099943 d904022b4d272b71dd39bf14a158f2a179e3db79ff68db0d4a6f636283d02a09      2498                    0 processed/splits/crossmodal_v5/panther_family/seed_2024.csv
+
+[DONE] /home/genetics/yiombi/Morpho/processed/splits/crossmodal_v5
+[IMPORTANT] No morphology target column was read.
