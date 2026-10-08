@@ -1,0 +1,46 @@
+[1/5] Load model identities using Entrez as canonical key
+  paired Entrez genes=5323
+  symbol aliases=88
+  canonical UniProt disagreements=0
+[2/5] Verify group definitions are seed-stable
+[3/5] Compare ORF vs CRISPR biological partitions
+[4/5] Audit current ORF/CRISPR split concordance
+[5/5] Write summary
+
+=== CANONICAL PAIRING ===
+paired genes             : 5323
+symbol aliases           : 88
+canonical UniProt mismatch: 0
+
+=== GROUP SEED STABILITY ===
+dataset      benchmark  n_paired_total  n_comparable  n_seed_stable  seed_stability_fraction
+    orf     homology30            5323          5323           5323                      1.0
+    orf     homology50            5323          5323           5323                      1.0
+    orf panther_family            5323          5303           5303                      1.0
+ crispr     homology30            5323          5323           5323                      1.0
+ crispr     homology50            5323          5323           5323                      1.0
+ crispr panther_family            5323          5303           5303                      1.0
+
+=== CROSS-MODAL PARTITION CONCORDANCE ===
+     benchmark  n_paired_total  n_orf_with_group  n_crispr_with_group  n_common_group_eligible  n_partition_match  partition_match_fraction
+    homology30            5323              5323                 5323                     5323               5323                       1.0
+    homology50            5323              5323                 5323                     5323               5323                       1.0
+panther_family            5323              5303                 5303                     5303               5303                       1.0
+
+=== EXISTING SPLIT CONCORDANCE ===
+     benchmark  seed  n_paired_total  n_comparable  same_split_n  same_split_fraction
+   random_gene    42            5323          5323          3491             0.655833
+   random_gene   123            5323          5323          3528             0.662784
+   random_gene  2024            5323          5323          3532             0.663536
+    homology30    42            5323          5323          3500             0.657524
+    homology30   123            5323          5323          3516             0.660530
+    homology30  2024            5323          5323          3518             0.660906
+    homology50    42            5323          5323          3440             0.646252
+    homology50   123            5323          5323          3468             0.651512
+    homology50  2024            5323          5323          3532             0.663536
+panther_family    42            5323          5303          3537             0.666981
+panther_family   123            5323          5303          3542             0.667924
+panther_family  2024            5323          5303          3467             0.653781
+
+[DONE] /home/genetics/yiombi/Morpho/results/crossmodal_v5/pairing_key_group_audit_v1
+[IMPORTANT] No morphology X_* column was read.

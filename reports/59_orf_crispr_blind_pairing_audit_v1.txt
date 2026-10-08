@@ -1,0 +1,29 @@
+[1/5] Load identity columns only
+  ORF:    rows=12182 genes=12182
+  CRISPR: rows=7953 genes=7953
+[2/5] Build exact gene-symbol paired universe
+[3/5] Audit cross-key disagreements
+[4/5] Inventory canonical frozen split files
+[5/5] Write audit outputs
+
+=== BLIND CROSS-MODAL PAIRING SUMMARY ===
+{
+  "n_symbol_pairs": 5235,
+  "fraction_of_orf": 0.42973239205384994,
+  "fraction_of_crispr": 0.6582421727649943,
+  "n_entrez_overlap_independent": 5323,
+  "n_uniprot_exact_overlap_independent": 5322,
+  "n_uniprot_canonical_overlap_independent": 5322,
+  "n_symbol_pairs_both_entrez": 5235,
+  "n_symbol_pairs_entrez_match": 5235,
+  "n_symbol_pairs_entrez_mismatch": 0,
+  "n_symbol_pairs_both_uniprot": 5235,
+  "n_symbol_pairs_uniprot_exact_match": 5235,
+  "n_symbol_pairs_uniprot_canonical_match": 5235,
+  "n_symbol_pair_identity_conflicts": 0,
+  "n_same_entrez_different_symbol": 88,
+  "n_same_uniprot_different_symbol": 91
+}
+
+[DONE] /home/genetics/yiombi/Morpho/results/crossmodal_v5/blind_pairing_audit_v1
+[IMPORTANT] No X_* morphology target column was read.
