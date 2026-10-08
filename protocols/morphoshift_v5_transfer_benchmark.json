@@ -1,0 +1,82 @@
+{
+  "protocol": "MorphoShift_v5_crossmodal_transfer_stageA",
+  "paired_gene_key": "Metadata_NCBI_Gene_ID",
+  "paired_universe_n": 5323,
+  "panther_eligible_n": 5303,
+  "directions": [
+    "ORF_to_CRISPR",
+    "CRISPR_to_ORF"
+  ],
+  "benchmarks": [
+    "random_gene",
+    "homology30",
+    "homology50",
+    "panther_family"
+  ],
+  "seeds": [
+    42,
+    123,
+    2024
+  ],
+  "split_source": "processed/splits/crossmodal_v5",
+  "split_policy": "Frozen. No changes after phenotype inspection.",
+  "models": {
+    "B0": "target TRAIN mean",
+    "B2": "cosine-kNN transfer from source morphology",
+    "B3": "multi-output Ridge transfer from source morphology"
+  },
+  "preprocessing": {
+    "source": "feature-wise TRAIN mean/std only",
+    "target": "feature-wise TRAIN mean/std only",
+    "test_statistics_forbidden": true,
+    "epsilon": 1e-8
+  },
+  "knn": {
+    "metric": "cosine",
+    "weighting": "uniform",
+    "k_grid": [1, 5, 10, 20, 50, 100],
+    "selection": "validation primary metric only"
+  },
+  "ridge": {
+    "solver": "cholesky",
+    "alpha_grid": [
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1,
+      10,
+      100,
+      1000,
+      10000,
+      100000,
+      1000000
+    ],
+    "selection": "validation primary metric only"
+  },
+  "primary_metric": {
+    "name": "standardized_multivariate_R2_vs_train_mean",
+    "formula": "1 - SSE(model)/SSE(train-target-mean)"
+  },
+  "secondary_metrics": [
+    "mean_gene_centered_cosine",
+    "median_gene_centered_cosine",
+    "phenotype_norm_spearman",
+    "mean_feature_R2",
+    "median_feature_R2"
+  ],
+  "primary_contrast": "B3_vs_B0",
+  "secondary_contrasts": [
+    "B2_vs_B0",
+    "B3_vs_B2"
+  ],
+  "bootstrap": {
+    "n": 2000,
+    "random_gene_unit": "entrez_id",
+    "homology30_unit": "cluster_id30",
+    "homology50_unit": "cluster_id50",
+    "panther_family_unit": "panther_family"
+  },
+  "stageA_rule": "No ESM2, GO, STRING, localization, expression, dependency, or other context features are used in Stage A.",
+  "next_stage_gate": "Proceed to gene-prior and context-conditioned models only after Stage A cross-modal transfer results are recorded."
+}

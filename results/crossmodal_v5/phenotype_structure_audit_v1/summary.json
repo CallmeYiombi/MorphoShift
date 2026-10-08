@@ -1,0 +1,63 @@
+{
+  "status": "PHENOTYPE_STRUCTURE_PASS",
+  "split_protocol_already_frozen": true,
+  "split_changes_allowed": false,
+  "performance_metric_computed": false,
+  "prediction_model_fit": false,
+  "paired_universe_n": 5323,
+  "paired_phenotype_overlap_n": 5323,
+  "missing_orf_n": 0,
+  "missing_crispr_n": 0,
+  "missing_orf_entrez": [],
+  "missing_crispr_entrez": [],
+  "orf": {
+    "dataset": "orf",
+    "path": "/home/genetics/yiombi/Morpho/processed/orf_model_table.parquet",
+    "n_model_rows": 12182,
+    "n_target_dimensions": 722,
+    "first_target_column": "X_1",
+    "last_target_column": "X_722",
+    "n_paired_rows": 5323,
+    "n_paired_unique_entrez": 5323,
+    "n_rows_all_finite": 5323,
+    "n_rows_with_nonfinite": 0,
+    "n_all_zero_rows": 0,
+    "n_columns_with_nonfinite": 0,
+    "n_zero_variance_columns": 0,
+    "norm_summary": {
+      "min": 3.968169741601156,
+      "q01": 5.420048980960138,
+      "q25": 6.513138750179311,
+      "median": 7.16393838369378,
+      "q75": 8.279961156165818,
+      "q99": 21.479468162576115,
+      "max": 118.26801088601175
+    }
+  },
+  "crispr": {
+    "dataset": "crispr",
+    "path": "/home/genetics/yiombi/Morpho/processed/crispr_model_table.parquet",
+    "n_model_rows": 7953,
+    "n_target_dimensions": 259,
+    "first_target_column": "X_1",
+    "last_target_column": "X_259",
+    "n_paired_rows": 5323,
+    "n_paired_unique_entrez": 5323,
+    "n_rows_all_finite": 5323,
+    "n_rows_with_nonfinite": 0,
+    "n_all_zero_rows": 0,
+    "n_columns_with_nonfinite": 0,
+    "n_zero_variance_columns": 0,
+    "norm_summary": {
+      "min": 1.6043460939952103,
+      "q01": 2.021144133930826,
+      "q25": 2.7149574890213106,
+      "median": 3.0240758110268433,
+      "q75": 3.518615013305393,
+      "q99": 11.984844013375442,
+      "max": 63.812486801937645
+    }
+  },
+  "target_space_note": "ORF and CRISPR target spaces are kept modality-specific. Different dimensions do not prevent supervised cross-space prediction.",
+  "important": "No train/test performance, correlation, R2, cosine prediction metric, or model fitting was performed."
+}
